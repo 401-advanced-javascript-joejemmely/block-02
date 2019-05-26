@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose');
 const books = require('../models/books-model.js');
+const bookshelves = require('../models/bookshelves-model.js');
 const handleError = require('../middleware/handle-error.js');
 
 const mongooseOptions = {
@@ -29,7 +30,6 @@ function getBook(request, response, next) {
   books
     .get(request.params.id)
     .then(data => {
-      console.log(data);
       response.render('pages/books/show', {
         book: data[0],
         bookshelves: data
@@ -39,6 +39,11 @@ function getBook(request, response, next) {
 }
 
 function createBook(request, response, next) {
+  const { bookshelf } = request.body;
+  bookshelves
+    .post({ name: bookshelf })
+    .then()
+    .catch(err => handleError(err, response));
   books
     .post(request.body)
     .then(result => {

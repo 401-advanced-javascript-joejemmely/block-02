@@ -6,8 +6,8 @@
 
 ### Links and Resources
 
-- [submission PR](http://xyz.com)
-- [travis](http://xyz.com)
+- [submission PR](https://github.com/401-advanced-javascript-joejemmely/block-02/pull/1)
+- [travis](https://travis-ci.com/401-advanced-javascript-joejemmely/block-02)
 - [back-end](http://xyz.com) (when applicable)
 - [front-end](http://xyz.com) (when applicable)
 
@@ -15,7 +15,6 @@
 
 - [api docs](http://xyz.com) (API servers)
 - [jsdoc](http://xyz.com) (Server assignments)
-- [styleguide](http://xyz.com) (React assignments)
 
 ### Modules
 
@@ -37,6 +36,7 @@ Usage Notes or examples
 
 - `PORT` - Port Number
 - `MONGODB_URI` - URL to the running mongo instance/db
+- `DATABASE_URL` - URL to the running postgre db
 
 #### Running the app
 
