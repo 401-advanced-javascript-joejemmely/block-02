@@ -8,7 +8,6 @@
 
 - [submission PR](https://github.com/401-advanced-javascript-joejemmely/block-02/pull/1)
 - [travis](https://travis-ci.com/401-advanced-javascript-joejemmely/block-02)
-- [back-end](http://xyz.com) (when applicable)
 - [front-end](http://xyz.com) (when applicable)
 
 #### Documentation
