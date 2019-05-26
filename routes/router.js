@@ -1,18 +1,15 @@
 'use strict';
 
 const express = require('express');
+const createSearch = require('../middleware/create-search.js');
+const newSearch = require('../middleware/new-search.js');
+const dbSelector = require('../helper/db-selector.js');
+
 const router = express.Router();
 
-// TODO: require pg || mongo
-const {
-  getBooks,
-  createSearch,
-  newSearch,
-  getBook,
-  createBook,
-  updateBook,
-  deleteBook
-} = require('./pg.js');
+const { getBooks, getBook, createBook, updateBook, deleteBook } = dbSelector(
+  'mongo'
+);
 
 // API Routes
 router.get('/', getBooks);

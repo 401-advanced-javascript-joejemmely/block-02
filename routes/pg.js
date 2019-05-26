@@ -1,7 +1,7 @@
 'use strict';
 
-const superagent = require('superagent');
 const pg = require('pg');
+const handleError = require('../middleware/handle-error.js');
 
 // Database Setup
 const client = new pg.Client(process.env.DATABASE_URL);
@@ -21,31 +21,6 @@ function getBooks(request, response) {
       }
     })
     .catch(err => handleError(err, response));
-}
-
-function createSearch(request, response) {
-  let url = 'https://www.googleapis.com/books/v1/volumes?q=';
-
-  if (request.body.search[1] === 'title') {
-    url += `+intitle:${request.body.search[0]}`;
-  }
-  if (request.body.search[1] === 'author') {
-    url += `+inauthor:${request.body.search[0]}`;
-  }
-
-  superagent
-    .get(url)
-    .then(apiResponse =>
-      apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo))
-    )
-    .then(results =>
-      response.render('pages/searches/show', { results: results })
-    )
-    .catch(err => handleError(err, response));
-}
-
-function newSearch(request, response) {
-  response.render('pages/searches/new');
 }
 
 function getBook(request, response) {
@@ -144,14 +119,8 @@ function deleteBook(request, response) {
     .catch(err => handleError(err, response));
 }
 
-function handleError(error, response) {
-  response.render('pages/error', { error: error });
-}
-
 module.exports = {
   getBooks,
-  createSearch,
-  newSearch,
   getBook,
   createBook,
   updateBook,
