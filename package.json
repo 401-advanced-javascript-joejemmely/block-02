@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "watch": "nodemon index.js",
+    "lint": "eslint '**/*.js'",
     "test": "jest --coverage --verbose"
   },
   "keywords": [],
@@ -23,6 +24,7 @@
     "superagent": "^3.8.3"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
     "jest": "^24.8.0",
     "supertest": "^4.0.2"
   }

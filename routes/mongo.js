@@ -2,13 +2,13 @@
 
 const mongoose = require('mongoose');
 const books = require('../models/books-model.js');
-const bookshelves = require('../models/bookshelves-model.js');
 const handleError = require('../middleware/handle-error.js');
 
 const mongooseOptions = {
   useNewUrlParser: true,
   useCreateIndex: true
 };
+
 mongoose.connect(process.env.MONGODB_URI, mongooseOptions);
 
 function getBooks(request, response, next) {
@@ -39,11 +39,6 @@ function getBook(request, response, next) {
 }
 
 function createBook(request, response, next) {
-  const { bookshelf } = request.body;
-  // bookshelves
-  //   .post({ name: bookshelf })
-  //   .then()
-  //   .catch(err => handleError(err, response));
   books
     .post(request.body)
     .then(result => {

@@ -1,6 +1,5 @@
 'use strict';
 
-const rootDir = process.cwd();
 const supergoose = require('./supergoose.js');
 const { app } = require();
 const mockRequest = supergoose.server(app);
