@@ -40,10 +40,10 @@ function getBook(request, response, next) {
 
 function createBook(request, response, next) {
   const { bookshelf } = request.body;
-  bookshelves
-    .post({ name: bookshelf })
-    .then()
-    .catch(err => handleError(err, response));
+  // bookshelves
+  //   .post({ name: bookshelf })
+  //   .then()
+  //   .catch(err => handleError(err, response));
   books
     .post(request.body)
     .then(result => {
