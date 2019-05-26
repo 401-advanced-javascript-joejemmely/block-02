@@ -8,12 +8,8 @@
 
 - [submission PR](https://github.com/401-advanced-javascript-joejemmely/block-02/pull/1)
 - [travis](https://travis-ci.com/401-advanced-javascript-joejemmely/block-02)
-- [front-end](http://xyz.com) (when applicable)
-
-#### Documentation
-
-- [api docs](http://xyz.com) (API servers)
-- [jsdoc](http://xyz.com) (Server assignments)
+- [front-end with mongoDB](https://block-02.herokuapp.com/)
+  - Check the book ids (/books/:id) to see that it's working with mongo instead of pg
 
 ### Setup
 
