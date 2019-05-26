@@ -9,7 +9,7 @@
 - [submission PR](https://github.com/401-advanced-javascript-joejemmely/block-02/pull/1)
 - [travis](https://travis-ci.com/401-advanced-javascript-joejemmely/block-02)
 - [front-end with mongoDB](https://block-02.herokuapp.com/)
-  - Check the book ids (/books/:id) to see that it's working with mongo instead of pg
+  - Check the book id (/books/:id) to see that it's working with mongo instead of pg
 
 ### Setup
 
@@ -36,9 +36,14 @@ const { getBooks, getBook, createBook, updateBook, deleteBook } = dbSelector(
 
 #### Tests
 
-- How do you run tests?
+- How do you run tests? Supergoose, model
 - What assertions were made?
-- What assertions need to be / should be made?
+
+  - should respond with a 404 on an invalid route
+  - should respond with a 404 on an invalid method
+  - should be able to post to a valid model
+  - can post() a new book
+  - can get() a book
 
 #### UML
 
