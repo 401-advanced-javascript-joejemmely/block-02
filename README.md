@@ -16,20 +16,6 @@
 - [api docs](http://xyz.com) (API servers)
 - [jsdoc](http://xyz.com) (Server assignments)
 
-### Modules
-
-#### `modulename.js`
-
-##### Exported Values and Methods
-
-###### `foo(thing) -> string`
-
-Usage Notes or examples
-
-###### `bar(array) -> array`
-
-Usage Notes or examples
-
 ### Setup
 
 #### `.env` requirements
@@ -41,11 +27,17 @@ Usage Notes or examples
 #### Running the app
 
 - `npm start`
-- Endpoint: `/foo/bar/`
-  - Returns a JSON object with abc in it.
-- Endpoint: `/bing/zing/`
+- To switch between mongo and postgre, update line 10 in router.js
 
-  - Returns a JSON object with xyz in it.
+```
+const { getBooks, getBook, createBook, updateBook, deleteBook } = dbSelector(
+  'mongo'
+); // for mongoDB
+
+const { getBooks, getBook, createBook, updateBook, deleteBook } = dbSelector(
+  'pg'
+); // for postgre
+```
 
 #### Tests
 
