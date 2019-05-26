@@ -26,7 +26,7 @@ describe('api server', () => {
       bats: 'R',
       throws: 'R',
       position: 'C',
-      team: 'Bunnies'
+      team: 'Bunnies',
     };
 
     return mockRequest
@@ -44,7 +44,7 @@ describe('api server', () => {
       bats: 'R',
       throws: 'R',
       position: 'C',
-      team: 'Bunnies'
+      team: 'Bunnies',
     };
 
     return mockRequest

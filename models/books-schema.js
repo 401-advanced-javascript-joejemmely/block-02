@@ -9,7 +9,7 @@ const books = mongoose.Schema({
   isbn: { type: String },
   image_url: { type: String },
   description: { type: String },
-  bookshelf: { type: String }
+  bookshelf: { type: String },
 });
 
 module.exports = mongoose.model('books', books);

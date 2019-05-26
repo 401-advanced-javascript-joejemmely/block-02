@@ -13,7 +13,7 @@ describe('Books Model', () => {
       bats: 'R',
       throws: 'R',
       position: 'C',
-      team: 'Bunnies'
+      team: 'Bunnies',
     };
     return books.post(obj).then(record => {
       Object.keys(obj).forEach(key => {
@@ -28,7 +28,7 @@ describe('Books Model', () => {
       bats: 'R',
       throws: 'R',
       position: 'C',
-      team: 'Bunnies'
+      team: 'Bunnies',
     };
     return books.post(obj).then(record => {
       return books.get(record._id).then(player => {

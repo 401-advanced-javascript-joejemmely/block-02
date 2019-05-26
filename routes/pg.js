@@ -34,7 +34,7 @@ function getBook(request, response) {
         console.log(shelves.rows);
         response.render('pages/books/show', {
           book: result.rows[0],
-          bookshelves: shelves.rows
+          bookshelves: shelves.rows,
         });
       })
       .catch(err => handleError(err, response));
@@ -89,7 +89,7 @@ function updateBook(request, response) {
     isbn,
     image_url,
     description,
-    bookshelf_id
+    bookshelf_id,
   } = request.body;
   // let SQL = `UPDATE books SET title=$1, author=$2, isbn=$3, image_url=$4, description=$5, bookshelf=$6 WHERE id=$7;`;
   let SQL = `UPDATE books SET title=$1, author=$2, isbn=$3, image_url=$4, description=$5, bookshelf_id=$6 WHERE id=$7;`;
@@ -100,7 +100,7 @@ function updateBook(request, response) {
     image_url,
     description,
     bookshelf_id,
-    request.params.id
+    request.params.id,
   ];
 
   client
@@ -124,5 +124,5 @@ module.exports = {
   getBook,
   createBook,
   updateBook,
-  deleteBook
+  deleteBook,
 };

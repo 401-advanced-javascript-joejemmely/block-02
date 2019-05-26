@@ -6,7 +6,7 @@ const handleError = require('../middleware/handle-error.js');
 
 const mongooseOptions = {
   useNewUrlParser: true,
-  useCreateIndex: true
+  useCreateIndex: true,
 };
 
 mongoose.connect(process.env.MONGODB_URI, mongooseOptions);
@@ -15,12 +15,6 @@ function getBooks(request, response, next) {
   books
     .getAll()
     .then(data => {
-      const books = data.map(book => {
-        return {
-          id: book._id,
-          ...book._doc
-        };
-      });
       response.render('pages/index', { books: data });
     })
     .catch(err => handleError(err, response));
@@ -32,7 +26,7 @@ function getBook(request, response, next) {
     .then(data => {
       response.render('pages/books/show', {
         book: data[0],
-        bookshelves: data
+        bookshelves: data,
       });
     })
     .catch(err => handleError(err, response));
