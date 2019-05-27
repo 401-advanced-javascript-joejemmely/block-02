@@ -47,4 +47,4 @@ const { getBooks, getBook, createBook, updateBook, deleteBook } = dbSelector(
 
 #### UML
 
-Link to an image of the UML for your application and response to events
+![UML](./block-2-uml.jpg)
