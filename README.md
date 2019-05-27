@@ -36,9 +36,8 @@ const { getBooks, getBook, createBook, updateBook, deleteBook } = dbSelector(
 
 #### Tests
 
-- How do you run tests? Supergoose, model
+- How do you run tests? `npm test`
 - What assertions were made?
-
   - should respond with a 404 on an invalid route
   - should respond with a 404 on an invalid method
   - should be able to post to a valid model
